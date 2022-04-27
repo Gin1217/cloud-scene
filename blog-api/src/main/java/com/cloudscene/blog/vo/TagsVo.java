@@ -10,7 +10,7 @@ import lombok.Data;
 
 
 @Data
-public class TagVo {
+public class TagsVo {
 
     private int id;
     private String name;

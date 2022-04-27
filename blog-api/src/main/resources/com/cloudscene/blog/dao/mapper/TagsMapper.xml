@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis配置文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloudscene.blog.dao.mapper.TagsMapper">
+    <!--        List<Tag> findTagsByArticleId(Long articlesId);
+    在这个文件中，id代表方法名，parameterType表示输入变量的名字，resultType表示泛型的类型-->
+    <select id="findTagsByArticlesId" parameterType="long" resultType="com.cloudscene.blog.dao.pojo.Tags">
+<!--        表示在tags这张表格下去查询它的id、name和tag_des信息-->
+        select id, name, tag_des from tags;
+<!--        cul_types这张表起到关联作用，表示在这个表格里找到文章和标签的对应关系-->
+        where id in
+        (select tag_id from cul_types where articles_id=#{articlesId})
+    </select>
+</mapper>

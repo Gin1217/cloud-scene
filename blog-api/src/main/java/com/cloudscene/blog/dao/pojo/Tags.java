@@ -6,4 +6,8 @@ package com.cloudscene.blog.dao.pojo;
  * @description Tags
  */
 public class Tags {
+    private int id;
+    private String name;
+    private String tag_des;
+
 }

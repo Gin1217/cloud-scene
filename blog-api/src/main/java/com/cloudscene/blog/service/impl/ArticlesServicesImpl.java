@@ -63,7 +63,13 @@ public class ArticlesServicesImpl implements ArticlesService {
         articlesVo.setCreateDate(new DateTime(articles.getCreateDate()).toString("yyyy-MM-dd HH:mm"));
 
 //        并不是所有接口都需要标签，作者信息
-
+if(isTag){
+    Long articleId = articles.getId();
+    articlesVo.setTags();
+}
+if(isAuthor){
+    articlesVo.setAuthor("");
+}
 
         return articlesVo;
     }

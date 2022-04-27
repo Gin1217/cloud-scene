@@ -32,7 +32,7 @@ public class ArticlesVo {
 
 //    private ArticleBodyVo body;
 
-    private List<TagVo> tags;
+    private List<TagsVo> tags;
 
 //    private CategoryVo category;
 }
